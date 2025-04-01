@@ -9,7 +9,7 @@ class InlineText extends Text
 {
     public $component = 'inline-text-field';
 
-    protected function resolveAttribute($resource, $attribute)
+    protected function resolveAttribute($resource, string $attribute): mixed
     {
         $this->withMeta(['resourceId' => $resource->getKey()]);
         return parent::resolveAttribute($resource, $attribute);
@@ -22,7 +22,7 @@ class InlineText extends Text
         ]]);
     }
 
-    public function resolve($resource, $attribute = null)
+    public function resolve($resource, ?string $attribute = null): void
     {
         parent::resolve($resource, $attribute);
 
